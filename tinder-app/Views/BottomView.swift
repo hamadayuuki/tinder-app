@@ -9,23 +9,15 @@ import UIKit
 
 // ホーム画面下 の画面
 class BottomView: UIView {
+    
+    let bottomButton1 = BottomButtonView(frame: .zero, width: 50, imageName: "reload")
+    let bottomButton2 = BottomButtonView(frame: .zero, width: 60, imageName: "cancel")
+    let bottomButton3 = BottomButtonView(frame: .zero, width: 50, imageName: "star")
+    let bottomButton4 = BottomButtonView(frame: .zero, width: 60, imageName: "heart")
+    let bottomButton5 = BottomButtonView(frame: .zero, width: 50, imageName: "thunder")
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let bottomButton1 = BottomButtonView(frame: .zero, width: 50, imageName: "reload")
-        bottomButton1.backgroundColor = .red
-        
-        let bottomButton2 = BottomButtonView(frame: .zero, width: 60, imageName: "cancel")
-        bottomButton2.backgroundColor = .yellow
-        
-        let bottomButton3 = BottomButtonView(frame: .zero, width: 50, imageName: "star")
-        bottomButton3.backgroundColor = .green
-        
-        let bottomButton4 = BottomButtonView(frame: .zero, width: 60, imageName: "heart")
-        bottomButton4.backgroundColor = .blue
-        
-        let bottomButton5 = BottomButtonView(frame: .zero, width: 50, imageName: "thunder")
-        bottomButton5.backgroundColor = .orange
         
         let baseHorizonStackView = UIStackView(arrangedSubviews: [bottomButton1, bottomButton2, bottomButton3, bottomButton4, bottomButton5])
         baseHorizonStackView.axis = .horizontal
