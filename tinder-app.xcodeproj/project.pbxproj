@@ -12,6 +12,7 @@
 		D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F527BFEAE3007346AB /* HomeViewController.swift */; };
 		D44D65FB27BFEAE4007346AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44D65FA27BFEAE4007346AB /* Assets.xcassets */; };
 		D44D65FE27BFEAE4007346AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44D65FC27BFEAE4007346AB /* LaunchScreen.storyboard */; };
+		D44D660827C13039007346AB /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D660727C13039007346AB /* BottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D44D65FA27BFEAE4007346AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44D65FD27BFEAE4007346AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D44D65FF27BFEAE4007346AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D44D660727C13039007346AB /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		D44D65F027BFEAE3007346AB /* tinder-app */ = {
 			isa = PBXGroup;
 			children = (
+				D44D660627C13000007346AB /* Views */,
 				D44D65F127BFEAE3007346AB /* AppDelegate.swift */,
 				D44D660527C12F56007346AB /* ViewControllers */,
 				D44D65F327BFEAE3007346AB /* SceneDelegate.swift */,
@@ -70,6 +73,14 @@
 				D44D65F527BFEAE3007346AB /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D44D660627C13000007346AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D44D660727C13039007346AB /* BottomView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 				D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */,
 				D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */,
 				D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */,
+				D44D660827C13039007346AB /* BottomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

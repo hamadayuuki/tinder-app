@@ -22,8 +22,7 @@ class HomeViewController: UIViewController {
         let centerView = UIView()
         centerView.backgroundColor = .blue
         // 下画面
-        let bottomView = UIView()
-        bottomView.backgroundColor = .green
+        let bottomView = BottomView()
         
         // 画面を並べる
         let stackView = UIStackView(arrangedSubviews: [topView, centerView, bottomView])
