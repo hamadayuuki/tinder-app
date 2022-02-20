@@ -10,16 +10,16 @@ import UIKit
 // ホーム画面下 の画面
 class BottomView: UIView {
     
-    let bottomButton1 = BottomButtonView(frame: .zero, width: 50, imageName: "reload")
-    let bottomButton2 = BottomButtonView(frame: .zero, width: 60, imageName: "cancel")
-    let bottomButton3 = BottomButtonView(frame: .zero, width: 50, imageName: "star")
-    let bottomButton4 = BottomButtonView(frame: .zero, width: 60, imageName: "heart")
-    let bottomButton5 = BottomButtonView(frame: .zero, width: 50, imageName: "thunder")
+    let reloadButton = BottomButtonView(frame: .zero, width: 50, imageName: "reload")
+    let cancelButton = BottomButtonView(frame: .zero, width: 60, imageName: "cancel")
+    let superLikeButton = BottomButtonView(frame: .zero, width: 50, imageName: "superLike")
+    let favoriteButton = BottomButtonView(frame: .zero, width: 60, imageName: "favorite")
+    let boostButton = BottomButtonView(frame: .zero, width: 50, imageName: "boost")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let baseHorizonStackView = UIStackView(arrangedSubviews: [bottomButton1, bottomButton2, bottomButton3, bottomButton4, bottomButton5])
+        let baseHorizonStackView = UIStackView(arrangedSubviews: [reloadButton, cancelButton, superLikeButton, favoriteButton, boostButton])
         baseHorizonStackView.axis = .horizontal
         baseHorizonStackView.distribution = .fillEqually
         baseHorizonStackView.spacing = 10
