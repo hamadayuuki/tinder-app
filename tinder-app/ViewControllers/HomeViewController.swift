@@ -16,8 +16,8 @@ class HomeViewController: UIViewController {
         
         // 3画面の描画
         // 上画面
-        let topView = UIView()
-        topView.backgroundColor = .yellow
+        let topView = TopView()
+        
         // 中央画面
         let centerView = UIView()
         centerView.backgroundColor = .blue
