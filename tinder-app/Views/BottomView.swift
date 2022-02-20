@@ -12,19 +12,19 @@ class BottomView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let bottomButton1 = UIView()
+        let bottomButton1 = BottomButtonView(frame: .zero, width: 50)
         bottomButton1.backgroundColor = .red
         
-        let bottomButton2 = UIView()
+        let bottomButton2 = BottomButtonView(frame: .zero, width: 60)
         bottomButton2.backgroundColor = .yellow
         
-        let bottomButton3 = UIView()
+        let bottomButton3 = BottomButtonView(frame: .zero, width: 50)
         bottomButton3.backgroundColor = .green
         
-        let bottomButton4 = UIView()
+        let bottomButton4 = BottomButtonView(frame: .zero, width: 60)
         bottomButton4.backgroundColor = .blue
         
-        let bottomButton5 = UIView()
+        let bottomButton5 = BottomButtonView(frame: .zero, width: 50)
         bottomButton5.backgroundColor = .orange
         
         let baseHorizonStackView = UIStackView(arrangedSubviews: [bottomButton1, bottomButton2, bottomButton3, bottomButton4, bottomButton5])
@@ -41,11 +41,9 @@ class BottomView: UIView {
             baseHorizonStackView.topAnchor.constraint(equalTo: topAnchor),
             baseHorizonStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             baseHorizonStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),   // 左端から距離10をとる
-            baseHorizonStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)   // 右端から距離10をとる
+            baseHorizonStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),   // 右端から距離10をとる
         ]
             .forEach { $0.isActive = true }
-        
-       
         
     }
     
