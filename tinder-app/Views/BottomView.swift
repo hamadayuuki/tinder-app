@@ -12,19 +12,19 @@ class BottomView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let bottomButton1 = BottomButtonView(frame: .zero, width: 50)
+        let bottomButton1 = BottomButtonView(frame: .zero, width: 50, imageName: "reload")
         bottomButton1.backgroundColor = .red
         
-        let bottomButton2 = BottomButtonView(frame: .zero, width: 60)
+        let bottomButton2 = BottomButtonView(frame: .zero, width: 60, imageName: "cancel")
         bottomButton2.backgroundColor = .yellow
         
-        let bottomButton3 = BottomButtonView(frame: .zero, width: 50)
+        let bottomButton3 = BottomButtonView(frame: .zero, width: 50, imageName: "star")
         bottomButton3.backgroundColor = .green
         
-        let bottomButton4 = BottomButtonView(frame: .zero, width: 60)
+        let bottomButton4 = BottomButtonView(frame: .zero, width: 60, imageName: "heart")
         bottomButton4.backgroundColor = .blue
         
-        let bottomButton5 = BottomButtonView(frame: .zero, width: 50)
+        let bottomButton5 = BottomButtonView(frame: .zero, width: 50, imageName: "thunder")
         bottomButton5.backgroundColor = .orange
         
         let baseHorizonStackView = UIStackView(arrangedSubviews: [bottomButton1, bottomButton2, bottomButton3, bottomButton4, bottomButton5])

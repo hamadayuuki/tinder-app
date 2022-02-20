@@ -11,11 +11,11 @@ class BottomButtonView: UIView {
     
     var button: UIButton?   // 外部から参照できるように
     
-    init(frame: CGRect, width: CGFloat) {
+    init(frame: CGRect, width: CGFloat, imageName: String) {
         super.init(frame: frame)
         
-        button = UIButton(type: .system)
-        button?.setTitle("tap", for: .normal)
+        button = UIButton(type: .custom)   // .custom: アイコンの色を変更可能
+        button?.setImage(UIImage(named: imageName)?.resize(size: CGSize(width: width*0.4, height: width*0.4)), for: .normal)
         button?.translatesAutoresizingMaskIntoConstraints = false
         button?.backgroundColor = .white
         button?.layer.cornerRadius = width/2
