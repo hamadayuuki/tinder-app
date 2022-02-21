@@ -28,14 +28,16 @@ class BottomButtonView: UIView {
         
         addSubview(button!)   // 強制アンラップ(非推奨)
         
-        // view の大きさや位置を指定
-        [
-            button?.centerYAnchor.constraint(equalTo: centerYAnchor),
-            button?.centerXAnchor.constraint(equalTo: centerXAnchor),
-            button?.widthAnchor.constraint(equalToConstant: width),
-            button?.heightAnchor.constraint(equalToConstant: width),
-        ]
-            .forEach { $0?.isActive = true }
+        button?.anchor(centerY: centerYAnchor, centerX: centerXAnchor, width: width, height: width)
+        
+        // view の大きさや位置を指定 → UIView の Extension として別クラスに作成
+//        [
+//            button?.centerYAnchor.constraint(equalTo: centerYAnchor),
+//            button?.centerXAnchor.constraint(equalTo: centerXAnchor),
+//            button?.widthAnchor.constraint(equalToConstant: width),
+//            button?.heightAnchor.constraint(equalToConstant: width),
+//        ]
+//            .forEach { $0?.isActive = true }
     }
     
     required init?(coder: NSCoder) {

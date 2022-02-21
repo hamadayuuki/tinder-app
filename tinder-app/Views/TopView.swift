@@ -44,15 +44,17 @@ class TopView: UIView {
         
         addSubview(baseHorizonStackView)
         
-        // view の大きさや位置を指定
-        [
-            // 上下左右の余白を無しにする, safeArea の領域を考慮して配置
-            baseHorizonStackView.topAnchor.constraint(equalTo: topAnchor),
-            baseHorizonStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            baseHorizonStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),   // 左端から距離10をとる
-            baseHorizonStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -40),   // 右端から距離10をとる
-        ]
-            .forEach { $0.isActive = true }
+        baseHorizonStackView.anchor(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, right: rightAnchor, leftPadding: 30, rightPadding: 30)
+        
+        // view の大きさや位置を指定 → UIView の Extension として別クラスに作成
+//        [
+//            // 上下左右の余白を無しにする, safeArea の領域を考慮して配置
+//            baseHorizonStackView.topAnchor.constraint(equalTo: topAnchor),
+//            baseHorizonStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//            baseHorizonStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),   // 左端から距離40をとる
+//            baseHorizonStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -40),   // 右端から距離40をとる
+//        ]
+//            .forEach { $0.isActive = true }
         
         tinderButton.isSelected = true   // 初期に表示するボタン
     }
