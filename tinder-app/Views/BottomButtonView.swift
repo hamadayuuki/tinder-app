@@ -28,16 +28,8 @@ class BottomButtonView: UIView {
         
         addSubview(button!)   // 強制アンラップ(非推奨)
         
-        button?.anchor(centerY: centerYAnchor, centerX: centerXAnchor, width: width, height: width)
+        button?.anchor(centerY: centerYAnchor, centerX: centerXAnchor, width: width, height: width)   // Viewの位置や大きさ
         
-        // view の大きさや位置を指定 → UIView の Extension として別クラスに作成
-//        [
-//            button?.centerYAnchor.constraint(equalTo: centerYAnchor),
-//            button?.centerXAnchor.constraint(equalTo: centerXAnchor),
-//            button?.widthAnchor.constraint(equalToConstant: width),
-//            button?.heightAnchor.constraint(equalToConstant: width),
-//        ]
-//            .forEach { $0?.isActive = true }
     }
     
     required init?(coder: NSCoder) {
@@ -52,14 +44,15 @@ class BottomButton: UIButton {
         didSet {
             // ボタンが押された時
             if isHighlighted {
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [],
+                //             ↓ アニメーション時間  ↓ 待機時間  ↓ バネのような動き 振幅の大きさ(0~1)   ↓ 初速                  ↓ 追加機能
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [],
                                animations: {
                     self.transform = .init(scaleX: 0.8, y: 0.8)   // 大きさを 0.8倍
                     self.layoutIfNeeded()
                     
                 })
             } else {
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [],
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [],
                                animations: {
                     self.transform = .identity   // 大きさを もとに戻す
                     self.layoutIfNeeded()

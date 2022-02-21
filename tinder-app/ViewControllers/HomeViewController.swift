@@ -21,16 +21,17 @@ class HomeViewController: UIViewController {
         // 中央画面
         let centerView = UIView()
         centerView.backgroundColor = .blue
+        
         // 下画面
         let bottomView = BottomView()
         
         // 画面を並べる
         let stackView = UIStackView(arrangedSubviews: [topView, centerView, bottomView])
-        stackView.translatesAutoresizingMaskIntoConstraints = false   // 配置を自動で調整する
+        stackView.translatesAutoresizingMaskIntoConstraints = false   //  Auto Layout以前に使われていた、Autosizingのレイアウトの仕組みをAuto Layoutに変換するかどうかを設定するフラグ
         // 3画面を均等に配置する
         stackView.axis = .vertical
         
-        self.view.addSubview(stackView)   // 作成したViewを描画
+        self.view.addSubview(stackView)   // Viewを描画
         
         // view の大きさや位置を指定
         [

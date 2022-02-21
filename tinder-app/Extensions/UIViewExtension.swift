@@ -29,8 +29,7 @@ extension UIView {
     
     ) {
         
-        //  Auto Layout以前に使われていた、Autosizingのレイアウトの仕組みをAuto Layoutに変換するかどうかを設定するフラグ
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false   //  Auto Layout以前に使われていた、Autosizingのレイアウトの仕組みをAuto Layoutに変換するかどうかを設定するフラグ
         
         // nilチェック
         //                      ↓ 制約の種類           ↓ スタート位置  ↓ スタートとの間隔
