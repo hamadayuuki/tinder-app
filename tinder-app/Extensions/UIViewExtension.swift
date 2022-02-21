@@ -19,8 +19,8 @@ extension UIView {
         centerY: NSLayoutYAxisAnchor? = nil,
         centerX: NSLayoutXAxisAnchor? = nil,
         
-        width: CGFloat? = 0,
-        height: CGFloat? = 0,
+        width: CGFloat? = nil,
+        height: CGFloat? = nil,
         
         topPadding: CGFloat = 0,
         bottomPadding: CGFloat = 0,

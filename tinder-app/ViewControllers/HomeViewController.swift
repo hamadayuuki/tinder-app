@@ -19,8 +19,7 @@ class HomeViewController: UIViewController {
         let topView = TopView()
         
         // 中央画面
-        let centerView = UIView()
-        centerView.backgroundColor = .blue
+        let centerView = CenterView()
         
         // 下画面
         let bottomView = BottomView()
