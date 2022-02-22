@@ -21,6 +21,7 @@
 		D44D661627C254B5007346AB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D44D661527C254B5007346AB /* RxSwift */; };
 		D44D661827C26C2B007346AB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D661727C26C2B007346AB /* UIViewExtension.swift */; };
 		D4D9630C27C3F2630029A739 /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9630B27C3F2630029A739 /* CenterView.swift */; };
+		D4D9630E27C4D79F0029A739 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9630D27C4D79F0029A739 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		D44D660E27C242BF007346AB /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		D44D661727C26C2B007346AB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		D4D9630B27C3F2630029A739 /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
+		D4D9630D27C4D79F0029A739 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				D44D660C27C2352A007346AB /* UIImageExtension.swift */,
 				D44D661727C26C2B007346AB /* UIViewExtension.swift */,
+				D4D9630D27C4D79F0029A739 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */,
 				D44D660827C13039007346AB /* BottomView.swift in Sources */,
 				D44D661827C26C2B007346AB /* UIViewExtension.swift in Sources */,
+				D4D9630E27C4D79F0029A739 /* UIColorExtension.swift in Sources */,
 				D4D9630C27C3F2630029A739 /* CenterView.swift in Sources */,
 				D44D660D27C2352A007346AB /* UIImageExtension.swift in Sources */,
 			);

@@ -72,6 +72,34 @@ class CenterView: UIView {
         return label
     }()
     
+    // GOODラベル
+    let goodLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 45, weight: .bold)
+        label.text = "GOOD"
+        label.textColor = .rgb(red: 137, green: 223, blue: 86)
+        
+        label.layer.borderWidth = 3
+        label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
+        label.layer.cornerRadius = 10
+        label.textAlignment = .center
+        return label
+    }()
+    
+    // BADラベル
+    let badLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 45, weight: .bold)
+        label.text = "BAD"
+        label.textColor = .rgb(red: 222, green: 110, blue: 110)
+        
+        label.layer.borderWidth = 3
+        label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
+        label.layer.cornerRadius = 10
+        label.textAlignment = .center
+        return label
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -131,6 +159,8 @@ class CenterView: UIView {
         addSubview(nameLabel)
         addSubview(ageLabel)
         addSubview(baseStackView)
+        addSubview(goodLabel)
+        addSubview(badLabel)
         
         // 位置と大きさ を指定, 描画する全ての要素に制約がつくよう指定を行う
         cardImageView.anchor(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, right: rightAnchor, leftPadding: 10, rightPadding: 10)
@@ -138,6 +168,8 @@ class CenterView: UIView {
         baseStackView.anchor(bottom: cardImageView.bottomAnchor, left: cardImageView.leftAnchor, right: cardImageView.rightAnchor, bottomPadding: 20, leftPadding: 20, rightPadding: 20)
         nameLabel.anchor(bottom: baseStackView.topAnchor, left: cardImageView.leftAnchor, bottomPadding: 10, leftPadding: 20)
         ageLabel.anchor(bottom: baseStackView.topAnchor, left: nameLabel.rightAnchor, bottomPadding: 10, leftPadding: 15)
+        goodLabel.anchor(top: cardImageView.topAnchor, left: cardImageView.leftAnchor, width: 140, height: 55, topPadding: 20, leftPadding: 20)
+        badLabel.anchor(top: cardImageView.topAnchor, right: cardImageView.rightAnchor, width: 140, height: 55, topPadding: 20, rightPadding: 20)
     }
     
     required init?(coder: NSCoder) {
