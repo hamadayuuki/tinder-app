@@ -89,7 +89,7 @@ class CenterView: UIView {
         
         // ドラッグ&ドロップされている時
         if gesture.state == .changed {
-            self.transform = CGAffineTransform(translationX: translation.x, y: translation.y)   // 検知したx,yへ移動
+            handlePanGesture(translation: translation)   // 回転
         } else if gesture.state == .ended {
             // 初期値に戻るアニメーション
             UIView.animate(withDuration: 0.3) {
@@ -97,6 +97,15 @@ class CenterView: UIView {
                 self.layoutIfNeeded()   // アニメーションを認識
             }
         }
+    }
+    
+    // ドラッグ&ドロップに対する回転
+    private func handlePanGesture(translation: CGPoint) {
+        let degree: CGFloat = translation.x / 20
+        let angle: CGFloat = degree * .pi / 100
+        
+        let rotateTolanslation = CGAffineTransform(rotationAngle: angle)
+        self.transform = rotateTolanslation.translatedBy(x: translation.x, y: translation.y)
     }
     
     // 描画する要素 や 位置, 大きさ を指定
