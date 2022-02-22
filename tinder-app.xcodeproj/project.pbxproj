@@ -23,6 +23,8 @@
 		D4D9630C27C3F2630029A739 /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9630B27C3F2630029A739 /* CenterView.swift */; };
 		D4D9630E27C4D79F0029A739 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9630D27C4D79F0029A739 /* UIColorExtension.swift */; };
 		D4D9631027C4E3D80029A739 /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9630F27C4E3D80029A739 /* CardLabel.swift */; };
+		D4D9631227C4ECAA0029A739 /* CardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9631127C4ECAA0029A739 /* CardImage.swift */; };
+		D4D9631427C4ED3E0029A739 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9631327C4ED3E0029A739 /* CardButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		D4D9630B27C3F2630029A739 /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
 		D4D9630D27C4D79F0029A739 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D4D9630F27C4E3D80029A739 /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
+		D4D9631127C4ECAA0029A739 /* CardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImage.swift; sourceTree = "<group>"; };
+		D4D9631327C4ED3E0029A739 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +103,13 @@
 		D44D660627C13000007346AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D44D660E27C242BF007346AB /* TopView.swift */,
+				D4D9630B27C3F2630029A739 /* CenterView.swift */,
+				D4D9630F27C4E3D80029A739 /* CardLabel.swift */,
+				D4D9631127C4ECAA0029A739 /* CardImage.swift */,
+				D4D9631327C4ED3E0029A739 /* CardButton.swift */,
 				D44D660727C13039007346AB /* BottomView.swift */,
 				D44D660927C21B63007346AB /* BottomButtonView.swift */,
-				D44D660E27C242BF007346AB /* TopView.swift */,
-				D4D9630F27C4E3D80029A739 /* CardLabel.swift */,
-				D4D9630B27C3F2630029A739 /* CenterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,12 +205,14 @@
 				D44D660F27C242BF007346AB /* TopView.swift in Sources */,
 				D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */,
 				D4D9631027C4E3D80029A739 /* CardLabel.swift in Sources */,
+				D4D9631227C4ECAA0029A739 /* CardImage.swift in Sources */,
 				D44D660A27C21B63007346AB /* BottomButtonView.swift in Sources */,
 				D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */,
 				D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */,
 				D44D660827C13039007346AB /* BottomView.swift in Sources */,
 				D44D661827C26C2B007346AB /* UIViewExtension.swift in Sources */,
 				D4D9630E27C4D79F0029A739 /* UIColorExtension.swift in Sources */,
+				D4D9631427C4ED3E0029A739 /* CardButton.swift in Sources */,
 				D4D9630C27C3F2630029A739 /* CenterView.swift in Sources */,
 				D44D660D27C2352A007346AB /* UIImageExtension.swift in Sources */,
 			);

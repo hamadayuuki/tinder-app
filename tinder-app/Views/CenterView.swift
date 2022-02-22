@@ -9,27 +9,9 @@ import UIKit
 
 class CenterView: UIView {
     
-    // ユーザーの写真
-    let cardImageView: UIImageView = {
-       let iamgeView = UIImageView()
-        iamgeView.image = UIImage(named: "userPic1")
-        iamgeView.backgroundColor = .green
-        iamgeView.layer.cornerRadius = 10
-        iamgeView.contentMode = .scaleAspectFill   // 縦横の比率はそのままで短い辺を基準に全体を表示する
-        iamgeView.clipsToBounds = true
-        iamgeView.layer.borderWidth = 3
-        iamgeView.layer.borderColor = UIColor.gray.cgColor
-        return iamgeView
-    }()
+    private let cardImageView = CardImage(frame: .zero)   // ユーザーの写真
     
-    // 情報ボタン
-    let infoButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "info")?.resize(size: .init(width: 40, height: 40)), for: .normal)
-        button.tintColor = .white
-        button.imageView?.contentMode = .scaleAspectFit
-        return button
-    }()
+    private let infoButton = CardButton(frame: .zero)   // 情報ボタン
     
     private let nameLabel = CardLabel(frame: .zero, labelText: "Nanashi", fontSize: 40, fontWeight: .heavy)   // ユーザー名
     private let ageLabel = CardLabel(frame: .zero, labelText: "20", fontSize: 40, fontWeight: .heavy)   // 年齢
