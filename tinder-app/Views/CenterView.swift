@@ -9,6 +9,9 @@ import UIKit
 
 class CenterView: UIView {
     
+    private let gradientLayer = CAGradientLayer()   // グラデーション
+    
+    // MARK: UIViews
     private let cardImageView = CardImage(frame: .zero)   // ユーザーの写真
     
     private let infoButton = CardButton(frame: .zero)   // 情報ボタン
@@ -24,14 +27,29 @@ class CenterView: UIView {
     let badLabel = CardLabel(frame: .zero, labelText: "BAD", labelColor: UIColor.rgb(red: 222, green: 110, blue: 110))
     
     
+    // MARK: Layout
     override init(frame: CGRect) {
         super.init(frame: frame)
                 
         setupLayout()
+        gradientLayout()
         
         // ドラッグ&ドロップ を検知する                            ↓ 検知した時 呼び出すメソッドを指定
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panCardView))
         self.addGestureRecognizer(panGesture)   // 検知を有効にする
+    }
+    
+    // グラデーションの 色や位置
+    private func gradientLayout() {
+        print(#function)
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.5, 1.1]
+        cardImageView.layer.addSublayer(gradientLayer)
+    }
+    
+    // グラデーションの大きさを指定, 画面の描画に関する標準メソッド
+    override func layoutSubviews() {
+        gradientLayer.frame = self.frame   // = cardImageView.frame とすると描画されない
     }
     
     // ドラッグ&ドロップ に応じて写真を動かす, アクションを検知した時 呼び出されるメソッド
