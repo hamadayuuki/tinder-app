@@ -91,11 +91,7 @@ class CenterView: UIView {
         if gesture.state == .changed {
             handlePanGesture(translation: translation)   // 回転
         } else if gesture.state == .ended {
-            // 初期値に戻るアニメーション
-            UIView.animate(withDuration: 0.3) {
-                self.transform = .identity   // 初期値に戻す
-                self.layoutIfNeeded()   // アニメーションを認識
-            }
+            handlePanEnded()
         }
     }
     
@@ -106,6 +102,14 @@ class CenterView: UIView {
         
         let rotateTolanslation = CGAffineTransform(rotationAngle: angle)
         self.transform = rotateTolanslation.translatedBy(x: translation.x, y: translation.y)
+    }
+    
+    // バウンドしながら初期値に戻るアニメーション
+    private func handlePanEnded() {
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: []) {
+                self.transform = .identity   // 初期値に戻す
+                self.layoutIfNeeded()   // アニメーションを認識
+        }
     }
     
     // 描画する要素 や 位置, 大きさ を指定
