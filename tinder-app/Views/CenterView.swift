@@ -77,36 +77,40 @@ class CenterView: UIView {
     }()
     
     // GOODラベル
-    let goodLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 45, weight: .bold)
-        label.text = "GOOD"
-        label.textColor = .rgb(red: 137, green: 223, blue: 86)
-        
-        label.layer.borderWidth = 3
-        label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
-        label.layer.cornerRadius = 10
-        label.textAlignment = .center
-        
-        label.alpha = 0   // 透明度
-        return label
-    }()
+//    let goodLabel: UILabel = {
+//        let label = UILabel()
+//        label.font = .systemFont(ofSize: 45, weight: .bold)
+//        label.text = "GOOD"
+//        label.textColor = .rgb(red: 137, green: 223, blue: 86)
+//
+//        label.layer.borderWidth = 3
+//        label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
+//        label.layer.cornerRadius = 10
+//        label.textAlignment = .center
+//
+//        label.alpha = 0   // 透明度
+//        return label
+//    }()
+    
+    let goodLabel = CardLabel(frame: .zero, labelText: "GOOD", labelColor: UIColor.rgb(red: 137, green: 223, blue: 86))
     
     // BADラベル
-    let badLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 45, weight: .bold)
-        label.text = "BAD"
-        label.textColor = .rgb(red: 222, green: 110, blue: 110)
-        
-        label.layer.borderWidth = 3
-        label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
-        label.layer.cornerRadius = 10
-        label.textAlignment = .center
-        
-        label.alpha = 0   // 透明度
-        return label
-    }()
+//    let badLabel: UILabel = {
+//        let label = UILabel()
+//        label.font = .systemFont(ofSize: 45, weight: .bold)
+//        label.text = "BAD"
+//        label.textColor = .rgb(red: 222, green: 110, blue: 110)
+//
+//        label.layer.borderWidth = 3
+//        label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
+//        label.layer.cornerRadius = 10
+//        label.textAlignment = .center
+//
+//        label.alpha = 0   // 透明度
+//        return label
+//    }()
+    
+    let badLabel = CardLabel(frame: .zero, labelText: "BAD", labelColor: UIColor.rgb(red: 222, green: 110, blue: 110))
     
     
     override init(frame: CGRect) {
