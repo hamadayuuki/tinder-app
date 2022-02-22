@@ -54,6 +54,7 @@
 		D4D9634B27C52B9F0029A739 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D4D9634A27C52B9F0029A739 /* FirebaseStorage */; };
 		D4D9634D27C52B9F0029A739 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D4D9634C27C52B9F0029A739 /* FirebaseStorageCombine-Community */; };
 		D4D9634F27C52B9F0029A739 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = D4D9634E27C52B9F0029A739 /* FirebaseStorageSwift-Beta */; };
+		D4D9635327C52F810029A739 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9635227C52F810029A739 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		D4D9631127C4ECAA0029A739 /* CardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImage.swift; sourceTree = "<group>"; };
 		D4D9631327C4ED3E0029A739 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		D4D9631527C528760029A739 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4D9635227C52F810029A739 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		D44D660527C12F56007346AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D4D9635227C52F810029A739 /* RegisterViewController.swift */,
 				D44D65F527BFEAE3007346AB /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -162,13 +165,8 @@
 		D44D660627C13000007346AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D44D660E27C242BF007346AB /* TopView.swift */,
-				D4D9630B27C3F2630029A739 /* CenterView.swift */,
-				D4D9630F27C4E3D80029A739 /* CardLabel.swift */,
-				D4D9631127C4ECAA0029A739 /* CardImage.swift */,
-				D4D9631327C4ED3E0029A739 /* CardButton.swift */,
-				D44D660727C13039007346AB /* BottomView.swift */,
-				D44D660927C21B63007346AB /* BottomButtonView.swift */,
+				D4D9635127C52F570029A739 /* Home */,
+				D4D9635027C52F4F0029A739 /* Register */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +179,27 @@
 				D4D9630D27C4D79F0029A739 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4D9635027C52F4F0029A739 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		D4D9635127C52F570029A739 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D44D660E27C242BF007346AB /* TopView.swift */,
+				D4D9630B27C3F2630029A739 /* CenterView.swift */,
+				D4D9630F27C4E3D80029A739 /* CardLabel.swift */,
+				D4D9631127C4ECAA0029A739 /* CardImage.swift */,
+				D4D9631327C4ED3E0029A739 /* CardButton.swift */,
+				D44D660727C13039007346AB /* BottomView.swift */,
+				D44D660927C21B63007346AB /* BottomButtonView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +317,7 @@
 				D44D660A27C21B63007346AB /* BottomButtonView.swift in Sources */,
 				D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */,
 				D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */,
+				D4D9635327C52F810029A739 /* RegisterViewController.swift in Sources */,
 				D44D660827C13039007346AB /* BottomView.swift in Sources */,
 				D44D661827C26C2B007346AB /* UIViewExtension.swift in Sources */,
 				D4D9630E27C4D79F0029A739 /* UIColorExtension.swift in Sources */,

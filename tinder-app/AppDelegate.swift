@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        window?.rootViewController = HomeViewController()   // アプリ起動時に表示する
+        window?.rootViewController = RegisterViewController()   // アプリ起動時に表示する
         return true
     }
 
