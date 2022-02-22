@@ -23,22 +23,24 @@ class CenterView: UIView {
     }()
     
     // ユーザー名
-    let nameLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 40, weight: .heavy)
-        label.textColor = .white
-        label.text = "Nanashi"
-        return label
-    }()
+//    let nameLabel: UILabel = {
+//       let label = UILabel()
+//        label.font = .systemFont(ofSize: 40, weight: .heavy)
+//        label.textColor = .white
+//        label.text = "Nanashi"
+//        return label
+//    }()
+    private let nameLabel = CardLabel(frame: .zero, labelText: "Nanashi", fontSize: 40)
     
     // 年齢
-    let ageLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 40, weight: .heavy)
-        label.textColor = .white
-        label.text = "20"
-        return label
-    }()
+//    let ageLabel: UILabel = {
+//       let label = UILabel()
+//        label.font = .systemFont(ofSize: 40, weight: .heavy)
+//        label.textColor = .white
+//        label.text = "20"
+//        return label
+//    }()
+    private let ageLabel = CardLabel(frame: .zero, labelText: "20", fontSize: 40)
     
     // 情報ボタン
     let infoButton: UIButton = {
@@ -50,66 +52,36 @@ class CenterView: UIView {
     }()
     
     // 住所
-    let residenceLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.textColor = .white
-        label.text = "日本、東京"
-        return label
-    }()
+//    let residenceLabel: UILabel = {
+//       let label = UILabel()
+//        label.font = .systemFont(ofSize: 20, weight: .regular)
+//        label.textColor = .white
+//        label.text = "日本、東京"
+//        return label
+//    }()
+    private let residenceLabel = CardLabel(frame: .zero, labelText: "日本, 東京", fontSize: 20)
     
     // 趣味
-    let hobbyLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.textColor = .white
-        label.text = "ランニング"
-        return label
-    }()
+//    let hobbyLabel: UILabel = {
+//       let label = UILabel()
+//        label.font = .systemFont(ofSize: 20, weight: .regular)
+//        label.textColor = .white
+//        label.text = "ランニング"
+//        return label
+//    }()
+    private let hobbyLabel = CardLabel(frame: .zero, labelText: "ランニング", fontSize: 20)
     
     // 一言
-    let commentLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.textColor = .white
-        label.text = "いつも走ってます"
-        return label
-    }()
-    
-    // GOODラベル
-//    let goodLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = .systemFont(ofSize: 45, weight: .bold)
-//        label.text = "GOOD"
-//        label.textColor = .rgb(red: 137, green: 223, blue: 86)
-//
-//        label.layer.borderWidth = 3
-//        label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
-//        label.layer.cornerRadius = 10
-//        label.textAlignment = .center
-//
-//        label.alpha = 0   // 透明度
+//    let commentLabel: UILabel = {
+//       let label = UILabel()
+//        label.font = .systemFont(ofSize: 20, weight: .regular)
+//        label.textColor = .white
+//        label.text = "いつも走ってます"
 //        return label
 //    }()
+    private let commentLabel = CardLabel(frame: .zero, labelText: "いつでも走ってます", fontSize: 20)
     
     let goodLabel = CardLabel(frame: .zero, labelText: "GOOD", labelColor: UIColor.rgb(red: 137, green: 223, blue: 86))
-    
-    // BADラベル
-//    let badLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = .systemFont(ofSize: 45, weight: .bold)
-//        label.text = "BAD"
-//        label.textColor = .rgb(red: 222, green: 110, blue: 110)
-//
-//        label.layer.borderWidth = 3
-//        label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
-//        label.layer.cornerRadius = 10
-//        label.textAlignment = .center
-//
-//        label.alpha = 0   // 透明度
-//        return label
-//    }()
-    
     let badLabel = CardLabel(frame: .zero, labelText: "BAD", labelColor: UIColor.rgb(red: 222, green: 110, blue: 110))
     
     

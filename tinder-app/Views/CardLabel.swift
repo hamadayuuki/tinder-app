@@ -8,6 +8,8 @@
 import UIKit
 
 class CardLabel: UILabel {
+    
+    // GOOD/BADラベル
     init(frame: CGRect, labelText: String, labelColor: UIColor) {
         super.init(frame: frame)
         
@@ -22,6 +24,14 @@ class CardLabel: UILabel {
         textAlignment = .center
         
         alpha = 0   // 透明度
+    }
+    
+    // 文字色が白のラベル, 文字の細さは 標準
+    init(frame: CGRect, labelText: String, fontSize: CGFloat) {
+        super.init(frame: frame)
+        font = .systemFont(ofSize: fontSize, weight: .regular)
+        textColor = .white
+        text = labelText
     }
     
     required init?(coder: NSCoder) {
