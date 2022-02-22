@@ -9,43 +9,11 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    // ユーザー名
-    let nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "名前"
-        textField.borderStyle = .roundedRect
-        textField.font = .systemFont(ofSize: 15)
-        return textField
-    }()
+    let nameTextField = RegisterTextField(placeHolder: "名前")   // ユーザー名
+    let emailTextField = RegisterTextField(placeHolder: "メールアドレス")   // メールアドレス
+    let passwordTextField = RegisterTextField(placeHolder: "パスワード")   // パスワード
     
-    // メールアドレス
-    let emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "メールアドレス"
-        textField.borderStyle = .roundedRect
-        textField.font = .systemFont(ofSize: 15)
-        return textField
-    }()
-    
-    // パスワード
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "パスワード"
-        textField.borderStyle = .roundedRect
-        textField.font = .systemFont(ofSize: 15)
-        return textField
-    }()
-    
-    // 登録ボタン
-    let registerButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("登録", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
-        button.layer.cornerRadius = 10
-        return button
-    }()
-
+    let registerButton = RegisterButton(title: "登録")   // 登録ボタン
     
     override func viewDidLoad() {
         super.viewDidLoad()
