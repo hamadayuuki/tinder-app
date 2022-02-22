@@ -12,8 +12,6 @@ class CardLabel: UILabel {
     // GOOD/BADラベル
     init(frame: CGRect, labelText: String, labelColor: UIColor) {
         super.init(frame: frame)
-        
-        // GOOD/BADラベル
         font = .systemFont(ofSize: 45, weight: .bold)
         text = labelText
         textColor = labelColor
@@ -27,9 +25,9 @@ class CardLabel: UILabel {
     }
     
     // 文字色が白のラベル, 文字の細さは 標準
-    init(frame: CGRect, labelText: String, fontSize: CGFloat) {
+    init(frame: CGRect, labelText: String, fontSize: CGFloat, fontWeight: UIFont.Weight) {
         super.init(frame: frame)
-        font = .systemFont(ofSize: fontSize, weight: .regular)
+        font = .systemFont(ofSize: fontSize, weight: fontWeight)
         textColor = .white
         text = labelText
     }
