@@ -12,9 +12,13 @@ class CenterView: UIView {
     // ユーザーの写真
     let cardImageView: UIImageView = {
        let iamgeView = UIImageView()
+        iamgeView.image = UIImage(named: "userPic1")
         iamgeView.backgroundColor = .green
         iamgeView.layer.cornerRadius = 10
-        iamgeView.contentMode = .scaleToFill   // 短い方を優先して縦横の比を保つ
+        iamgeView.contentMode = .scaleAspectFill   // 縦横の比率はそのままで短い辺を基準に全体を表示する
+        iamgeView.clipsToBounds = true
+        iamgeView.layer.borderWidth = 3
+        iamgeView.layer.borderColor = UIColor.gray.cgColor
         return iamgeView
     }()
     
