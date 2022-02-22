@@ -22,12 +22,6 @@ class CenterView: UIView {
         return iamgeView
     }()
     
-    // ユーザー名
-    private let nameLabel = CardLabel(frame: .zero, labelText: "Nanashi", fontSize: 40, fontWeight: .heavy)
-    
-    // 年齢
-    private let ageLabel = CardLabel(frame: .zero, labelText: "20", fontSize: 40, fontWeight: .heavy)
-    
     // 情報ボタン
     let infoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -37,15 +31,13 @@ class CenterView: UIView {
         return button
     }()
     
-    // 住所
-    private let residenceLabel = CardLabel(frame: .zero, labelText: "日本, 東京", fontSize: 20, fontWeight: .regular)
+    private let nameLabel = CardLabel(frame: .zero, labelText: "Nanashi", fontSize: 40, fontWeight: .heavy)   // ユーザー名
+    private let ageLabel = CardLabel(frame: .zero, labelText: "20", fontSize: 40, fontWeight: .heavy)   // 年齢
+    private let residenceLabel = CardLabel(frame: .zero, labelText: "日本, 東京", fontSize: 20, fontWeight: .regular)    // 住所
+    private let hobbyLabel = CardLabel(frame: .zero, labelText: "ランニング", fontSize: 20, fontWeight: .regular)   // 趣味
+    private let commentLabel = CardLabel(frame: .zero, labelText: "いつでも走ってます", fontSize: 20, fontWeight: .regular)   // 一言
     
-    // 趣味
-    private let hobbyLabel = CardLabel(frame: .zero, labelText: "ランニング", fontSize: 20, fontWeight: .regular)
-    
-    // 一言
-    private let commentLabel = CardLabel(frame: .zero, labelText: "いつでも走ってます", fontSize: 20, fontWeight: .regular)
-    
+    // GOOD/BADラベル
     let goodLabel = CardLabel(frame: .zero, labelText: "GOOD", labelColor: UIColor.rgb(red: 137, green: 223, blue: 86))
     let badLabel = CardLabel(frame: .zero, labelText: "BAD", labelColor: UIColor.rgb(red: 222, green: 110, blue: 110))
     
