@@ -83,6 +83,8 @@ class CenterView: UIView {
         label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
         label.layer.cornerRadius = 10
         label.textAlignment = .center
+        
+        label.alpha = 0   // 透明度
         return label
     }()
     
@@ -97,6 +99,8 @@ class CenterView: UIView {
         label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
         label.layer.cornerRadius = 10
         label.textAlignment = .center
+        
+        label.alpha = 0   // 透明度
         return label
     }()
     
@@ -129,7 +133,18 @@ class CenterView: UIView {
         let angle: CGFloat = degree * .pi / 100
         
         let rotateTolanslation = CGAffineTransform(rotationAngle: angle)
-        self.transform = rotateTolanslation.translatedBy(x: translation.x, y: translation.y)
+        self.transform = rotateTolanslation.translatedBy(x: translation.x, y: translation.y)   // 回転移動
+        
+        let ratio: CGFloat = 1/100
+        let ratioValue = ratio * translation.x
+        
+        // GOOD/BADラベル の透明度を調整
+        if translation.x > 0 {
+            goodLabel.alpha = ratioValue
+        } else if translation.x < 0 {
+            badLabel.alpha = -ratioValue
+        }
+        
     }
     
     // バウンドしながら初期値に戻るアニメーション
@@ -137,6 +152,10 @@ class CenterView: UIView {
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: []) {
                 self.transform = .identity   // 初期値に戻す
                 self.layoutIfNeeded()   // アニメーションを認識
+            
+                // GOOD/BADラベル を透明に
+                self.goodLabel.alpha = 0
+                self.badLabel.alpha = 0
         }
     }
     
