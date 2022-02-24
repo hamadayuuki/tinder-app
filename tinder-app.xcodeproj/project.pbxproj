@@ -57,6 +57,7 @@
 		D4D9635327C52F810029A739 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9635227C52F810029A739 /* RegisterViewController.swift */; };
 		D4D9635727C53ADE0029A739 /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9635627C53ADE0029A739 /* RegisterTextField.swift */; };
 		D4D9635927C53CAA0029A739 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9635827C53CAA0029A739 /* RegisterButton.swift */; };
+		D4D9635B27C794EF0029A739 /* RegisterTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9635A27C794EF0029A739 /* RegisterTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		D4D9635227C52F810029A739 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D4D9635627C53ADE0029A739 /* RegisterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
 		D4D9635827C53CAA0029A739 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		D4D9635A27C794EF0029A739 /* RegisterTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				D4D9635627C53ADE0029A739 /* RegisterTextField.swift */,
 				D4D9635827C53CAA0029A739 /* RegisterButton.swift */,
+				D4D9635A27C794EF0029A739 /* RegisterTitleLabel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				D4D9635927C53CAA0029A739 /* RegisterButton.swift in Sources */,
 				D44D660F27C242BF007346AB /* TopView.swift in Sources */,
+				D4D9635B27C794EF0029A739 /* RegisterTitleLabel.swift in Sources */,
 				D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */,
 				D4D9635727C53ADE0029A739 /* RegisterTextField.swift in Sources */,
 				D4D9631027C4E3D80029A739 /* CardLabel.swift in Sources */,
