@@ -19,8 +19,19 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setGradientLayout()   // 他の要素よりも早く描画させる
         setLayout()
-        
+    }
+    
+    // グラデーション の描画
+    private func setGradientLayout() {
+        let gradientLayer = CAGradientLayer()
+        let startColor = UIColor.rgb(red: 227, green: 48, blue: 78).cgColor
+        let endColor = UIColor.rgb(red: 245, green: 208, blue: 108).cgColor
+        gradientLayer.colors = [startColor, endColor]
+        gradientLayer.locations = [0.0, 1.3]
+        gradientLayer.frame = self.view.frame
+        view.layer.addSublayer(gradientLayer)
     }
     
     private func setLayout() {
