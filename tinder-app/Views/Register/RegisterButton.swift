@@ -8,6 +8,13 @@
 import UIKit
 
 class RegisterButton: UIButton {
+    override var isHighlighted: Bool {
+        didSet {
+            //                     ↓ この変数が      ↓ true なら                                      ↓ false なら
+            self.backgroundColor = isHighlighted ? .rgb(red: 227, green: 48, blue: 78, alpha: 0.2): .rgb(red: 227, green: 48, blue: 78)
+        }
+    }
+    
     init(title: String) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
