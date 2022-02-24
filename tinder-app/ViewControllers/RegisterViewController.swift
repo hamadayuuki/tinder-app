@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    let titleLabel = RegisterTitleLabel()
+    let titleLabel = RegisterTitleLabel()   // タイトル "Tinder"
     let nameTextField = RegisterTextField(placeHolder: "名前")   // ユーザー名
     let emailTextField = RegisterTextField(placeHolder: "メールアドレス")   // メールアドレス
     let passwordTextField = RegisterTextField(placeHolder: "パスワード")   // パスワード
@@ -19,6 +19,11 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setLayout()
+        
+    }
+    
+    private func setLayout() {
         view.backgroundColor = .yellow
         
         let baseHorizontalStackView = UIStackView(arrangedSubviews: [nameTextField, emailTextField, passwordTextField, registerButton])
@@ -32,6 +37,5 @@ class RegisterViewController: UIViewController {
         nameTextField.anchor(height: 40)   // 1つの高さを指定すると他の大きさも同じ高さになる
         baseHorizontalStackView.anchor(left: view.leftAnchor, right: view.rightAnchor, centerY: view.centerYAnchor, leftPadding: 40, rightPadding: 40)
         titleLabel.anchor(bottom: baseHorizontalStackView.topAnchor, centerX: baseHorizontalStackView.centerXAnchor, bottomPadding: 10)
-        
     }
 }
