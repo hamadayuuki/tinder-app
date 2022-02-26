@@ -13,6 +13,7 @@ import FirebaseFirestore
 class RegisterViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
+    private let registerViewModel = RegisterViewModel()
     
     let titleLabel = RegisterTitleLabel()   // タイトル "Tinder"
     let nameTextField = RegisterTextField(placeHolder: "名前")   // ユーザー名
@@ -56,27 +57,27 @@ class RegisterViewController: UIViewController {
         titleLabel.anchor(bottom: baseHorizontalStackView.topAnchor, centerX: baseHorizontalStackView.centerXAnchor, bottomPadding: 10)
     }
     
-    // 非同期処理
+    // 非同期処理, データの変更があると ViewModel に通知する
     private func setupBindings() {
         nameTextField.rx.text
             .asDriver()
             // [weak self]: 循環参照を避ける
             .drive { [weak self] text in
-                print(text)
+                self?.registerViewModel.nameTextInput.onNext(text ?? "")   // 通知する
             }
             .disposed(by: disposeBag)
         
         emailTextField.rx.text
             .asDriver()
             .drive { [weak self] text in
-                print(text)
+                self?.registerViewModel.emailTextInput.onNext(text ?? "")
             }
             .disposed(by: disposeBag)
         
         passwordTextField.rx.text
             .asDriver()
             .drive { [weak self] text in
-                print(text)
+                self?.registerViewModel.passwordTextInput.onNext(text ?? "")
             }
             .disposed(by: disposeBag)
         

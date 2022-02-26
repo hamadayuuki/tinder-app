@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D42BF46A27CA307E009F92E0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46927CA307E009F92E0 /* RegisterViewModel.swift */; };
 		D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F127BFEAE3007346AB /* AppDelegate.swift */; };
 		D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F327BFEAE3007346AB /* SceneDelegate.swift */; };
 		D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F527BFEAE3007346AB /* HomeViewController.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D42BF46927CA307E009F92E0 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		D44D65EE27BFEAE3007346AB /* tinder-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tinder-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44D65F127BFEAE3007346AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D44D65F327BFEAE3007346AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D42BF46827CA3048009F92E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D42BF46927CA307E009F92E0 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D44D65E527BFEAE3007346AB = {
 			isa = PBXGroup;
 			children = (
@@ -147,9 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				D44D660B27C23519007346AB /* Extensions */,
-				D44D660627C13000007346AB /* Views */,
-				D44D65F127BFEAE3007346AB /* AppDelegate.swift */,
 				D44D660527C12F56007346AB /* ViewControllers */,
+				D44D660627C13000007346AB /* Views */,
+				D42BF46827CA3048009F92E0 /* ViewModel */,
+				D44D65F127BFEAE3007346AB /* AppDelegate.swift */,
 				D44D65F327BFEAE3007346AB /* SceneDelegate.swift */,
 				D44D65FA27BFEAE4007346AB /* Assets.xcassets */,
 				D44D65FC27BFEAE4007346AB /* LaunchScreen.storyboard */,
@@ -326,6 +337,7 @@
 				D4D9635727C53ADE0029A739 /* RegisterTextField.swift in Sources */,
 				D4D9631027C4E3D80029A739 /* CardLabel.swift in Sources */,
 				D4D9631227C4ECAA0029A739 /* CardImage.swift in Sources */,
+				D42BF46A27CA307E009F92E0 /* RegisterViewModel.swift in Sources */,
 				D44D660A27C21B63007346AB /* BottomButtonView.swift in Sources */,
 				D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */,
 				D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */,
