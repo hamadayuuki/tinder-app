@@ -86,7 +86,7 @@ class RegisterViewController: UIViewController {
         registerButton.rx.tap
             .asDriver()
             .drive { [weak self] text in
-                self?.createUserToFireAuth()
+                self?.createUser()
             }
             .disposed(by: disposeBag)
         
@@ -100,41 +100,17 @@ class RegisterViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    // 登録処理
-    private func createUserToFireAuth() {
-        // nilチェック
-        guard let email = emailTextField.text else { return }
-        guard let name = nameTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
+    private func createUser() {
+        let email = emailTextField.text
+        let name = nameTextField.text
+        let password = passwordTextField.text
         
-        // 登録
-        Auth.auth().createUser(withEmail: email, password: password) { (auth, err) in
-            if let err = err {
-                print("登録失敗: ", err)
+        Auth.createUserToFireAuth(email: email, name: name, password: password) { success in
+            if success {
+                print("ユーザー情報の登録完了")
+            } else {
+                print("ユーザー情報登録時にエラー発生")
             }
-            
-            guard let uid = auth?.user.uid else { return }
-            print("登録成功: ", uid)
-            self.setupUserDataToFireStore(email: email, uid: uid)
-        }
-    }
-    
-    private func setupUserDataToFireStore(email: String, uid: String) {
-        guard let name = nameTextField.text else { return }
-        
-        let document = [
-            "name": name,
-            "email": email,
-            "createAt": Timestamp()
-        ] as [String : Any]
-        
-        Firestore.firestore().collection("user").document(uid).setData(document) { err in
-            if let err = err {
-                print("FireStoreへの登録に失敗: ", err)
-                return
-            }
-            
-            print("FireStoreへの登録に成功")
         }
     }
 }

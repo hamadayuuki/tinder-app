@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D42BF46A27CA307E009F92E0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46927CA307E009F92E0 /* RegisterViewModel.swift */; };
+		D42BF46C27CE5AFF009F92E0 /* FirebaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46B27CE5AFF009F92E0 /* FirebaseExtension.swift */; };
 		D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F127BFEAE3007346AB /* AppDelegate.swift */; };
 		D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F327BFEAE3007346AB /* SceneDelegate.swift */; };
 		D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F527BFEAE3007346AB /* HomeViewController.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		D42BF46927CA307E009F92E0 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		D42BF46B27CE5AFF009F92E0 /* FirebaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseExtension.swift; sourceTree = "<group>"; };
 		D44D65EE27BFEAE3007346AB /* tinder-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tinder-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44D65F127BFEAE3007346AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D44D65F327BFEAE3007346AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				D44D660C27C2352A007346AB /* UIImageExtension.swift */,
 				D44D661727C26C2B007346AB /* UIViewExtension.swift */,
 				D4D9630D27C4D79F0029A739 /* UIColorExtension.swift */,
+				D42BF46B27CE5AFF009F92E0 /* FirebaseExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				D4D9631427C4ED3E0029A739 /* CardButton.swift in Sources */,
 				D4D9630C27C3F2630029A739 /* CenterView.swift in Sources */,
 				D44D660D27C2352A007346AB /* UIImageExtension.swift in Sources */,
+				D42BF46C27CE5AFF009F92E0 /* FirebaseExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
