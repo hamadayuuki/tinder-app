@@ -59,6 +59,8 @@ class RegisterViewController: UIViewController {
     
     // 非同期処理, データの変更があると ViewModel に通知する
     private func setupBindings() {
+        
+        // textField の Binding
         nameTextField.rx.text
             .asDriver()
             // [weak self]: 循環参照を避ける
@@ -85,6 +87,15 @@ class RegisterViewController: UIViewController {
             .asDriver()
             .drive { [weak self] text in
                 self?.createUserToFireAuth()
+            }
+            .disposed(by: disposeBag)
+        
+        // viewModel の Binding
+        registerViewModel.validRegisterDriver
+            .drive { validAll in
+                print("validAll: ", validAll)
+                self.registerButton.isEnabled = validAll
+                self.registerButton.backgroundColor = validAll ? .rgb(red: 227, green: 48, blue: 78) : .init(white: 0.7, alpha: 1)
             }
             .disposed(by: disposeBag)
     }
