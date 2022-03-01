@@ -13,7 +13,20 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class RegisterViewModel {
+// 可読性を上げるために使用
+protocol RegisterViewModelInputs {
+    var nameTextInput: AnyObserver<String> { get }
+    var emailTextInput: AnyObserver<String> { get }
+    var passwordTextInput: AnyObserver<String> { get }
+}
+
+protocol RegisterViewModelOutputs {
+    var nameTextOutput: PublishSubject<String> { get }
+    var emailTextOutput: PublishSubject<String> { get }
+    var passwordTextOutput: PublishSubject<String> { get }
+}
+
+class RegisterViewModel: RegisterViewModelInputs, RegisterViewModelOutputs {
     
     private let disposeBag = DisposeBag()
     
