@@ -12,6 +12,23 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
+        
+        // 登録画面へ遷移, 0.5秒後 → 間隔を空けないと画面遷移がうまくいかないから
+        /*
+         【流れ】
+         アプリ起動 → (登録済みか？) → ○: ホーム画面, ホーム画面を元として画面遷移を実行する
+                                 → ×: 登録画面
+         */
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let registerViewController = RegisterViewController()
+            registerViewController.modalPresentationStyle = .fullScreen   // 全画面表示, デフォルトは画面上までのモーダル
+            self.present(registerViewController, animated: true)   // 画面遷移
+        }
+        
+    }
+    
+    private func setupLayout() {
         view.backgroundColor = .white
         
         // 3画面の描画
