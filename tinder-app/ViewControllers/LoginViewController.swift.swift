@@ -98,6 +98,7 @@ class LoginViewController: UIViewController {
             }
             
             print("ログイン認証に成功しました")
+            self.dismiss(animated: true)   // ホーム画面へ遷移
         }
     }
 }
