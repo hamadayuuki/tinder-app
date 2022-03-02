@@ -19,6 +19,7 @@ import FirebaseFirestore
 class HomeViewController: UIViewController {
 
     private var user: User?   // FireStoreから取得したデータを保持するモデル
+    private var otherUsers: [User] = [User]()
     
     // アプリ起動後(loadViewの次)実行
     override func viewDidLoad() {
@@ -52,6 +53,16 @@ class HomeViewController: UIViewController {
         Firestore.feathUserFromFirestore(uid: uid) { user in
             if let user = user {
                 self.user = user
+            }
+        }
+        
+        // 全てのユーザー情報を取得
+        Firestore.featchOtherUsersFromFirestore { otherUsers in
+            self.otherUsers = otherUsers ?? [User]()
+            print("otherUsers: ", self.otherUsers)
+            
+            for i in 0..<self.otherUsers.count {
+                print("otherUser.email: ",self.otherUsers[i].email)
             }
         }
     }

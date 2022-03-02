@@ -91,6 +91,36 @@ extension Firestore {
             completion(user)
         }
     }
+    
+    // 全てのユーザー情報をFireStoreから取得する → 今後は、"自分以外の"ユーザーの情報を取得する
+    static func featchOtherUsersFromFirestore(completion: @escaping ([User]?) -> Void) {
+        Firestore.firestore().collection("user").getDocuments { (snapshots, err) in
+            if let err = err {
+                print("他のユーザー情報の取得に失敗: ", err)
+                completion(nil)
+                return
+            }
+            
+            print("他のユーザー情報の取得に成功")
+            
+            // 他のユーザーのリスト作成 - 1
+//            var otherUsers = [User]()
+//            snapshots?.documents.forEach { (snapshot) in
+//                let dic = snapshot.data()
+//                let otherUser = User(dic: dic)
+//                otherUsers.append(otherUser)
+//            }
+            
+            // 他のユーザーのリスト作成 - 2
+            let otherUsers = snapshots?.documents.map({ (snapshot) -> User in
+                let dic = snapshot.data()
+                let otherUser = User(dic: dic)
+                return otherUser
+            })
+            
+            completion(otherUsers ?? [User]())
+        }
+    }
 }
 
 
