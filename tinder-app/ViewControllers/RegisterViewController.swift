@@ -22,6 +22,8 @@ class RegisterViewController: UIViewController {
     
     let registerButton = RegisterButton(title: "登録")   // 登録ボタン
     
+    let loginButton = RegisterLoginButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,10 +53,12 @@ class RegisterViewController: UIViewController {
         
         view.addSubview(baseHorizontalStackView)
         view.addSubview(titleLabel)
+        view.addSubview(loginButton)
         
         nameTextField.anchor(height: 40)   // 1つの高さを指定すると他の大きさも同じ高さになる
         baseHorizontalStackView.anchor(left: view.leftAnchor, right: view.rightAnchor, centerY: view.centerYAnchor, leftPadding: 40, rightPadding: 40)
         titleLabel.anchor(bottom: baseHorizontalStackView.topAnchor, centerX: baseHorizontalStackView.centerXAnchor, bottomPadding: 10)
+        loginButton.anchor(top: baseHorizontalStackView.bottomAnchor, centerX: view.centerXAnchor, topPadding: 30)
     }
     
     // 非同期処理, データの変更があると ViewModel に通知する
@@ -83,10 +87,19 @@ class RegisterViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        // Button の Binding
         registerButton.rx.tap
             .asDriver()
             .drive { [weak self] text in
                 self?.createUser()
+            }
+            .disposed(by: disposeBag)
+        
+        loginButton.rx.tap
+            .asDriver()
+            .drive { [weak self] text in
+                print("ログインボタンが押されました")
+                
             }
             .disposed(by: disposeBag)
         
