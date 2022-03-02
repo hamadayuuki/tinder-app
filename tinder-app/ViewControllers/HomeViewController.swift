@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
@@ -72,6 +73,16 @@ class HomeViewController: UIViewController {
             .forEach { $0.isActive = true }
         
         logoutButton.anchor(bottom: view.bottomAnchor, left: view.leftAnchor, bottomPadding: 10, leftPadding: 10)
+        logoutButton.addTarget(self, action: #selector(tapLogoutButton), for: .touchUpInside)   // RxSwift を使用しないボタンタップ
+    }
+    
+    // ログアウトボタンを押したとき実行
+    @objc private func tapLogoutButton() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("ログアウト失敗: ", error)
+        }
     }
 
 
