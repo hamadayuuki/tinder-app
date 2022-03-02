@@ -10,6 +10,7 @@
 		D42BF46A27CA307E009F92E0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46927CA307E009F92E0 /* RegisterViewModel.swift */; };
 		D42BF46C27CE5AFF009F92E0 /* FirebaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46B27CE5AFF009F92E0 /* FirebaseExtension.swift */; };
 		D42BF46E27CEED47009F92E0 /* RegisterLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46D27CEED47009F92E0 /* RegisterLoginButton.swift */; };
+		D42BF47227CEF152009F92E0 /* LoginViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF47127CEF152009F92E0 /* LoginViewController.swift.swift */; };
 		D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F127BFEAE3007346AB /* AppDelegate.swift */; };
 		D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F327BFEAE3007346AB /* SceneDelegate.swift */; };
 		D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F527BFEAE3007346AB /* HomeViewController.swift */; };
@@ -67,6 +68,7 @@
 		D42BF46927CA307E009F92E0 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		D42BF46B27CE5AFF009F92E0 /* FirebaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseExtension.swift; sourceTree = "<group>"; };
 		D42BF46D27CEED47009F92E0 /* RegisterLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterLoginButton.swift; sourceTree = "<group>"; };
+		D42BF47127CEF152009F92E0 /* LoginViewController.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift.swift; sourceTree = "<group>"; };
 		D44D65EE27BFEAE3007346AB /* tinder-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tinder-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44D65F127BFEAE3007346AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D44D65F327BFEAE3007346AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				D4D9635227C52F810029A739 /* RegisterViewController.swift */,
+				D42BF47127CEF152009F92E0 /* LoginViewController.swift.swift */,
 				D44D65F527BFEAE3007346AB /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -343,6 +346,7 @@
 				D4D9635727C53ADE0029A739 /* RegisterTextField.swift in Sources */,
 				D4D9631027C4E3D80029A739 /* CardLabel.swift in Sources */,
 				D4D9631227C4ECAA0029A739 /* CardImage.swift in Sources */,
+				D42BF47227CEF152009F92E0 /* LoginViewController.swift.swift in Sources */,
 				D42BF46A27CA307E009F92E0 /* RegisterViewModel.swift in Sources */,
 				D44D660A27C21B63007346AB /* BottomButtonView.swift in Sources */,
 				D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */,

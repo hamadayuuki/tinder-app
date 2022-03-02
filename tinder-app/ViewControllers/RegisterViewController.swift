@@ -32,6 +32,13 @@ class RegisterViewController: UIViewController {
         setupBindings()
     }
     
+    // viewDidLoadの次, 画面描画開始前に呼び出される
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true   // ナビゲーションバーを隠す
+    }
+    
     // グラデーション の描画
     private func setGradientLayout() {
         let gradientLayer = CAGradientLayer()
@@ -99,7 +106,9 @@ class RegisterViewController: UIViewController {
             .asDriver()
             .drive { [weak self] text in
                 print("ログインボタンが押されました")
-                
+                // 画面遷移, HomeViewController で UINavigationViewController の設定を行う必要あり
+                let loginViewController = LoginViewController()
+                self?.navigationController?.pushViewController(loginViewController, animated: true)
             }
             .disposed(by: disposeBag)
         

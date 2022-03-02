@@ -22,8 +22,9 @@ class HomeViewController: UIViewController {
          */
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let registerViewController = RegisterViewController()
-            registerViewController.modalPresentationStyle = .fullScreen   // 全画面表示, デフォルトは画面上までのモーダル
-            self.present(registerViewController, animated: true)   // 画面遷移
+            let navigationView = UINavigationController(rootViewController: registerViewController)   // 画面遷移"先"の画面遷移を可能にする
+            navigationView.modalPresentationStyle = .fullScreen   // 全画面表示, デフォルトは画面上までのモーダル
+            self.present(navigationView, animated: true)   // 画面遷移
         }
         
     }
