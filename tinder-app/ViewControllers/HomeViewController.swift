@@ -14,6 +14,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class HomeViewController: UIViewController {
 
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController {
         
     }
     
+    // MARK: Life Cycle Methods
     // 画面描画後実行
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -37,6 +39,15 @@ class HomeViewController: UIViewController {
             navigationView.modalPresentationStyle = .fullScreen   // 全画面表示, デフォルトは画面上までのモーダル
             self.present(navigationView, animated: true)   // 画面遷移
         }
+    }
+    
+    // 画面描画前
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // uid を使用して FireStore からデータを取得
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.feathUserFromFirestore(uid: uid)
     }
     
     let logoutButton: UIButton = {

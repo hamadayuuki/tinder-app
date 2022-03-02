@@ -73,6 +73,21 @@ extension Firestore {
             print("FireStoreへの登録に成功")
         }
     }
+    
+    // uidを使ってFireStoreからデータを取得する
+    static func feathUserFromFirestore(uid: String) {
+        Firestore.firestore().collection("user").document(uid).getDocument { (snapshot, err) in
+            if let err = err {
+                print("ユーザー情報の取得に失敗: ", err)
+                return
+            }
+            
+            print("ユーザー情報の取得に成功")
+            print("uid: ", uid)
+            guard let data = snapshot?.data() else { return }
+            print("data: ", data)
+        }
+    }
 }
 
 
