@@ -18,6 +18,8 @@ import FirebaseFirestore
 
 class HomeViewController: UIViewController {
 
+    private var user: User?   // FireStoreから取得したデータを保持するモデル
+    
     // アプリ起動後(loadViewの次)実行
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,11 @@ class HomeViewController: UIViewController {
         
         // uid を使用して FireStore からデータを取得
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        Firestore.feathUserFromFirestore(uid: uid)
+        Firestore.feathUserFromFirestore(uid: uid) { user in
+            if let user = user {
+                self.user = user
+            }
+        }
     }
     
     let logoutButton: UIButton = {
