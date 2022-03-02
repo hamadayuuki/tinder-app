@@ -9,9 +9,9 @@ import UIKit
 import SwiftUI
 
 class RegisterTitleLabel: UILabel {
-    init() {
+    init(title: String) {
         super.init(frame: .zero)
-        text = "Tinder"
+        text = title
         font = .systemFont(ofSize: 80, weight: .bold)
         textColor = .white
     }

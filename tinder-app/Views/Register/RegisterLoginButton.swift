@@ -9,10 +9,10 @@ import UIKit
 
 class RegisterLoginButton: UIButton {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(text: String) {
+        super.init(frame: .zero)
         
-        setTitle("既にアカウントをお持ちの方", for: .normal)
+        setTitle(text, for: .normal)
         titleLabel?.font = .systemFont(ofSize: 14)
     }
     

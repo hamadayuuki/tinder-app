@@ -15,14 +15,15 @@ class RegisterViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let registerViewModel = RegisterViewModel()
     
-    let titleLabel = RegisterTitleLabel()   // タイトル "Tinder"
+    // MARK: UIView
+    let titleLabel = RegisterTitleLabel(title: "Tinder")   // タイトル "Tinder"
     let nameTextField = RegisterTextField(placeHolder: "名前")   // ユーザー名
     let emailTextField = RegisterTextField(placeHolder: "メールアドレス")   // メールアドレス
     let passwordTextField = RegisterTextField(placeHolder: "パスワード")   // パスワード
     
     let registerButton = RegisterButton(title: "登録")   // 登録ボタン
     
-    let loginButton = RegisterLoginButton()
+    let loginButton = RegisterLoginButton(text: "既にアカウントをお持ちの方はこちら")
     
     override func viewDidLoad() {
         super.viewDidLoad()
