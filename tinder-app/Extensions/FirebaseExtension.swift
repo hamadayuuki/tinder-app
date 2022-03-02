@@ -32,6 +32,23 @@ extension Auth {
             })
         }
     }
+    
+    static func loginWithFireAuth(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
+            if let err = err {
+                print("ログイン認証に失敗しました")
+                print("err: ", err)
+                print("email: ", email)
+                print("password: ", password)
+                completion(false)
+                return
+            }
+            
+            print("ログイン認証に成功しました")
+            completion(true)
+        }
+    }
 }
 
 // MARK: FireStore

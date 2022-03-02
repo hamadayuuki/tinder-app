@@ -91,18 +91,15 @@ class LoginViewController: UIViewController {
         
         HUD.show(.progress)
         
-        Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
-            if let err = err {
-                print("ログイン認証に失敗しました")
-                print("err: ", err)
-                print("email: ", email)
-                print("password: ", password)
-                return
-            }
+        Auth.loginWithFireAuth(email: email, password: password) { success in
             
-            print("ログイン認証に成功しました")
             HUD.hide()
-            self.dismiss(animated: true)   // ホーム画面へ遷移
+            
+            if success {
+                self.dismiss(animated: true)
+            } else {
+                print("ログイン失敗")
+            }
         }
     }
 }
