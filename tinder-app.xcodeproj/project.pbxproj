@@ -11,6 +11,7 @@
 		D42BF46C27CE5AFF009F92E0 /* FirebaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46B27CE5AFF009F92E0 /* FirebaseExtension.swift */; };
 		D42BF46E27CEED47009F92E0 /* RegisterLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF46D27CEED47009F92E0 /* RegisterLoginButton.swift */; };
 		D42BF47227CEF152009F92E0 /* LoginViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BF47127CEF152009F92E0 /* LoginViewController.swift.swift */; };
+		D42BF47527CF8559009F92E0 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D42BF47427CF8559009F92E0 /* PKHUD */; };
 		D44D65F227BFEAE3007346AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F127BFEAE3007346AB /* AppDelegate.swift */; };
 		D44D65F427BFEAE3007346AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F327BFEAE3007346AB /* SceneDelegate.swift */; };
 		D44D65F627BFEAE3007346AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D65F527BFEAE3007346AB /* HomeViewController.swift */; };
@@ -99,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4D9633D27C52B9F0029A739 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				D42BF47527CF8559009F92E0 /* PKHUD in Frameworks */,
 				D4D9631B27C52B9F0029A739 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				D4D9631D27C52B9F0029A739 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				D4D9634127C52B9F0029A739 /* FirebaseMLModelDownloader in Frameworks */,
@@ -279,6 +281,7 @@
 				D4D9634A27C52B9F0029A739 /* FirebaseStorage */,
 				D4D9634C27C52B9F0029A739 /* FirebaseStorageCombine-Community */,
 				D4D9634E27C52B9F0029A739 /* FirebaseStorageSwift-Beta */,
+				D42BF47427CF8559009F92E0 /* PKHUD */,
 			);
 			productName = "tinder-app";
 			productReference = D44D65EE27BFEAE3007346AB /* tinder-app.app */;
@@ -311,6 +314,7 @@
 			packageReferences = (
 				D44D661027C254B5007346AB /* XCRemoteSwiftPackageReference "RxSwift" */,
 				D4D9631727C52B9F0029A739 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D42BF47327CF8559009F92E0 /* XCRemoteSwiftPackageReference "PKHUD" */,
 			);
 			productRefGroup = D44D65EF27BFEAE3007346AB /* Products */;
 			projectDirPath = "";
@@ -571,6 +575,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D42BF47327CF8559009F92E0 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		D44D661027C254B5007346AB /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -590,6 +602,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D42BF47427CF8559009F92E0 /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D42BF47327CF8559009F92E0 /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
 		D44D661127C254B5007346AB /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D44D661027C254B5007346AB /* XCRemoteSwiftPackageReference "RxSwift" */;
