@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -17,7 +18,7 @@ class LoginViewController: UIViewController {
     let emailTextField = RegisterTextField(placeHolder: "メールアドレス")
     let passwordTextField = RegisterTextField(placeHolder: "パスワード")
     
-    let registerButton = RegisterButton(title: "ログイン")
+    let loginButton = RegisterLoginButton(text: "ログイン")
     
     let dontHaveAccountButton = RegisterLoginButton(text: "アカウントをお持ちでない方はこちら")
     
@@ -47,7 +48,7 @@ class LoginViewController: UIViewController {
     
     private func setLayout() {
         
-        let baseHorizontalStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, registerButton])
+        let baseHorizontalStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
         baseHorizontalStackView.axis = .vertical
         baseHorizontalStackView.distribution = .fillEqually   // 要素の大きさを均等にする
         baseHorizontalStackView.spacing = 20
@@ -63,6 +64,16 @@ class LoginViewController: UIViewController {
     }
     
     private func setupBinding() {
+        
+        // Button の Binding
+        loginButton.rx.tap
+            .asDriver()
+            .drive { [weak self] text in
+                print("ログインボタンが押されました")
+                self?.loginWithFireAuth()
+            }
+            .disposed(by: disposeBag)
+        
         dontHaveAccountButton.rx.tap
             .asDriver()
             .drive { [weak self] text in
@@ -71,5 +82,22 @@ class LoginViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+    }
+    
+    private func loginWithFireAuth() {
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
+            if let err = err {
+                print("ログイン認証に失敗しました")
+                print("err: ", err)
+                print("email: ", email)
+                print("password: ", password)
+                return
+            }
+            
+            print("ログイン認証に成功しました")
+        }
     }
 }
