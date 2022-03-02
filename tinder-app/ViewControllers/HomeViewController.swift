@@ -20,14 +20,20 @@ class HomeViewController: UIViewController {
          アプリ起動 → (登録済みか？) → ○: ホーム画面, ホーム画面を元として画面遷移を実行する
                                  → ×: 登録画面
          */
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let registerViewController = RegisterViewController()
-            let navigationView = UINavigationController(rootViewController: registerViewController)   // 画面遷移"先"の画面遷移を可能にする
-            navigationView.modalPresentationStyle = .fullScreen   // 全画面表示, デフォルトは画面上までのモーダル
-            self.present(navigationView, animated: true)   // 画面遷移
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            let registerViewController = RegisterViewController()
+//            let navigationView = UINavigationController(rootViewController: registerViewController)   // 画面遷移"先"の画面遷移を可能にする
+//            navigationView.modalPresentationStyle = .fullScreen   // 全画面表示, デフォルトは画面上までのモーダル
+//            self.present(navigationView, animated: true)   // 画面遷移
+//        }
         
     }
+    
+    let logoutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("ログアウト", for: .normal)
+        return button
+    }()
     
     private func setupLayout() {
         view.backgroundColor = .white
@@ -49,6 +55,7 @@ class HomeViewController: UIViewController {
         stackView.axis = .vertical
         
         self.view.addSubview(stackView)   // Viewを描画
+        self.view.addSubview(logoutButton)
         
         // view の大きさや位置を指定
         [
@@ -63,6 +70,8 @@ class HomeViewController: UIViewController {
             stackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
         ]
             .forEach { $0.isActive = true }
+        
+        logoutButton.anchor(bottom: view.bottomAnchor, left: view.leftAnchor, bottomPadding: 10, leftPadding: 10)
     }
 
 
