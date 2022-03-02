@@ -15,6 +15,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import PKHUD
 
 class HomeViewController: UIViewController {
 
@@ -67,7 +68,9 @@ class HomeViewController: UIViewController {
     
     // 全てのユーザー情報を取得
     private func featchOtherUsers() {
+        HUD.show(.progress)
         Firestore.featchOtherUsersFromFirestore { otherUsers in
+            HUD.hide()
             self.otherUsers = otherUsers ?? [User]()
             print("otherUsers: ", self.otherUsers)
             
