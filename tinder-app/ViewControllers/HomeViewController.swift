@@ -30,7 +30,22 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: Life Cycle Methods
-    // 画面描画後実行
+    // 画面描画前
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // uid を使用して FireStore からデータを取得
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.feathUserFromFirestore(uid: uid) { user in
+            if let user = user {
+                self.user = user
+            }
+        }
+        
+        featchOtherUsers()
+    }
+    
+    // 画面描画後
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -44,19 +59,14 @@ class HomeViewController: UIViewController {
         }
     }
     
-    // 画面描画前
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // uid を使用して FireStore からデータを取得
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        Firestore.feathUserFromFirestore(uid: uid) { user in
-            if let user = user {
-                self.user = user
-            }
-        }
-        
-        // 全てのユーザー情報を取得
+    let logoutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("ログアウト", for: .normal)
+        return button
+    }()
+    
+    // 全てのユーザー情報を取得
+    private func featchOtherUsers() {
         Firestore.featchOtherUsersFromFirestore { otherUsers in
             self.otherUsers = otherUsers ?? [User]()
             print("otherUsers: ", self.otherUsers)
@@ -66,12 +76,6 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
-    let logoutButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("ログアウト", for: .normal)
-        return button
-    }()
     
     private func setupLayout() {
         view.backgroundColor = .white
