@@ -28,10 +28,10 @@ class CenterView: UIView {
     
     
     // MARK: Layout
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(user: User) {
+        super.init(frame: .zero)
                 
-        setupLayout()
+        setupLayout(user: user)
         gradientLayout()
         
         // ドラッグ&ドロップ を検知する                            ↓ 検知した時 呼び出すメソッドを指定
@@ -97,7 +97,7 @@ class CenterView: UIView {
     }
     
     // 描画する要素 や 位置, 大きさ を指定
-    private func setupLayout() {
+    private func setupLayout(user: User) {
         
         // 横並び: 名前と年齢
         let nameAgeHorizontalStackView = UIStackView(arrangedSubviews: [nameLabel, ageLabel])
@@ -126,6 +126,10 @@ class CenterView: UIView {
         ageLabel.anchor(bottom: baseStackView.topAnchor, left: nameLabel.rightAnchor, bottomPadding: 10, leftPadding: 15)
         goodLabel.anchor(top: cardImageView.topAnchor, left: cardImageView.leftAnchor, width: 140, height: 55, topPadding: 20, leftPadding: 20)
         badLabel.anchor(top: cardImageView.topAnchor, right: cardImageView.rightAnchor, width: 140, height: 55, topPadding: 20, rightPadding: 20)
+        
+        // ユーザー情報を View に反映
+        nameLabel.text = user.name
+        commentLabel.text = user.email
     }
     
     required init?(coder: NSCoder) {

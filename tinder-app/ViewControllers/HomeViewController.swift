@@ -22,6 +22,11 @@ class HomeViewController: UIViewController {
     private var user: User?   // FireStoreから取得したデータを保持するモデル
     private var otherUsers: [User] = [User]()
     
+    // 3画面の描画, 外部クラスからも参照できるよう、ここに設置
+    let topView = TopView()   // 上画面
+    let centerView = UIView()   // 中央画面
+    let bottomView = BottomView()   // 下画面
+    
     // アプリ起動後(loadViewの次)実行
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,24 +79,17 @@ class HomeViewController: UIViewController {
             self.otherUsers = otherUsers ?? [User]()
             print("otherUsers: ", self.otherUsers)
             
-            for i in 0..<self.otherUsers.count {
-                print("otherUser.email: ",self.otherUsers[i].email)
-            }
+            // 全ユーザーのカードを作成
+            otherUsers?.forEach({ otherUser in
+                let cardView = CenterView(user: otherUser)
+                self.centerView.addSubview(cardView)   // 重ねて描画することでカードが待機しているように見せている
+                cardView.anchor(top: self.centerView.topAnchor, bottom: self.centerView.bottomAnchor, left: self.centerView.leftAnchor, right: self.centerView.rightAnchor)
+            })
         }
     }
     
     private func setupLayout() {
         view.backgroundColor = .white
-        
-        // 3画面の描画
-        // 上画面
-        let topView = TopView()
-        
-        // 中央画面
-        let centerView = CenterView()
-        
-        // 下画面
-        let bottomView = BottomView()
         
         // 画面を並べる
         let stackView = UIStackView(arrangedSubviews: [topView, centerView, bottomView])
