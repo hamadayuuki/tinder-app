@@ -55,12 +55,13 @@ class CenterView: UIView {
     // ドラッグ&ドロップ に応じて写真を動かす, アクションを検知した時 呼び出されるメソッド
     @objc private func panCardView(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self)   // ドラッグ&ドロップ で検知した情報(状態や座標)
+        guard let view = gesture.view else { return }
         
         // ドラッグ&ドロップされている時
         if gesture.state == .changed {
             handlePanGesture(translation: translation)   // 回転
         } else if gesture.state == .ended {
-            handlePanEnded()
+            handlePanEnded(translation: translation, view: view)
         }
     }
     
@@ -85,14 +86,23 @@ class CenterView: UIView {
     }
     
     // バウンドしながら初期値に戻るアニメーション
-    private func handlePanEnded() {
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: []) {
-                self.transform = .identity   // 初期値に戻す
-                self.layoutIfNeeded()   // アニメーションを認識
-            
-                // GOOD/BADラベル を透明に
-                self.goodLabel.alpha = 0
-                self.badLabel.alpha = 0
+    private func handlePanEnded(translation: CGPoint, view: UIView) {
+        
+        // スワイプ位置によってアニメーションを変更
+        if translation.x <= -120 {
+            view.removeCardViewAnimation(x: -600)
+        } else if translation.x >= 120 {
+            view.removeCardViewAnimation(x: 600)
+        } else {
+            // 中央へ戻る
+            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: []) {
+                    self.transform = .identity   // 初期値に戻す
+                    self.layoutIfNeeded()   // アニメーションを認識
+                
+                    // GOOD/BADラベル を透明に
+                    self.goodLabel.alpha = 0
+                    self.badLabel.alpha = 0
+            }
         }
     }
     

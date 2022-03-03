@@ -44,3 +44,21 @@ extension UIView {
         
     }
 }
+
+// MARK: Animations
+extension UIView {
+    
+    // スワイプした後のアニメーション
+    func removeCardViewAnimation(x: CGFloat) {
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7 ,options: []) {
+            let degree: CGFloat = x / 40
+            let angle: CGFloat = degree * .pi / 180
+            
+            let rotateTolanslation = CGAffineTransform(rotationAngle: angle)
+            self.transform = rotateTolanslation.translatedBy(x: x, y: 100)   // 回転移動
+            self.layoutIfNeeded()
+        } completion:  { _ in
+            self.removeFromSuperview()
+        }
+    }
+}
